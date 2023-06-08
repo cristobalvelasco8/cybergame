@@ -1,0 +1,96 @@
+<div class="row py-3 justify-content-center">
+  <div class="col-10">
+    <div class="container-fluid justify-content-center nav-category mb-3 rounded">
+      <div class="row text-center">
+        <a href="/categoria/Nintendo%2520Switch">
+          <div class="col-md py-3">
+            Nintendo Switch
+          </div>
+        </a>
+        <a href="/categoria/Playstation%25205">
+          <div class="col-md py-3">
+            Playstation 5
+          </div>
+        </a>
+        <a href="/categoria/Xbox%2520Series%2520X%257CS">
+          <div class="col-md py-3">
+            Xbox Series
+          </div>
+        </a>
+        <a href="categoria/Playstation%25204">
+          <div class="col-md py-3">
+            Playstation 4
+          </div>
+        </a>
+        <a href="categoria/Xbox%2520One">
+          <div class="col-md py-3">
+            Xbox One
+          </div>
+        </a>
+        <a href="categoria/Retro">
+          <div class="col-md py-3">
+            Retro
+          </div>
+        </a>
+      </div>
+    </div>
+    <div class="row">
+      <h1>{{producto.nombre_producto}}</h1>
+    </div>
+    <div class="row justify-content-between">
+      <div class="col-md-3"><img src="{{producto.imagen}}" alt="{{producto.nombre_producto}}"></div>
+      <div class="col-md-5">{{producto.descripcion}}</div>
+      <div class="col-md-4 text-end">
+        <h1 class="precio-detalle">{{producto.precio}} €</h1>
+        <div *ngIf="this.hasStock == 0" class="sin-stock"><span>Sin stock</span></div>
+        <div><h6>{{this.count}} valoraciones</h6></div>
+        <div>
+          <h3>
+            <ngb-rating [rate]="puntuacion">
+              <ng-template let-fill="fill">
+                <span *ngIf="fill === 100" class="filled">★</span>
+                <span *ngIf="fill === 0" class="notfilled">☆</span>
+              </ng-template>
+            </ngb-rating>
+          </h3>
+        </div>
+        <div *ngIf="user">
+          <div *ngIf="this.hasStock != 0">
+            <div *ngIf="hasDetallePedido != 1">
+              <button type="button" class="btn btn-vg" title="Añadir al carrito" (click)="addCarrito(user.id_user,producto.id_producto)">
+                <i class="fas fa-shopping-cart"></i>  Añadir al carrito
+              </button>
+            </div>
+            <div *ngIf="hasDetallePedido == 1">
+              <button type="button" class="btn btn-vg" title="Añadir otra copia al carrito" (click)="addCarrito(user.id_user,producto.id_producto)">
+                <i class="fas fa-shopping-cart"></i>  Añadir otra copia al carrito
+              </button>
+            </div>
+          </div>
+          <div *ngIf="this.hasStock == 0">
+            <button type="button" class="btn btn-vg disabled" title="No hay stock">
+              <i class="fas fa-shopping-cart"></i>  No existe stock
+            </button>
+          </div>
+        </div>
+        <div *ngIf="!user">
+          <button type="button" class="btn btn-vg" title="Inicia sesión para comprar" [routerLink]="['/login']">
+            <i class="fas fa-shopping-cart"></i>  Inicia sesión para comprar
+          </button>
+        </div>
+        <div *ngIf="this.isInLista == 0">
+          <button type="button" class="btn btn-vg" title="Añadir a lista de deseos" (click)="addListaDeseos(user.id_user,producto.id_producto)">
+            <i class="fas fa-heart"></i>  Añadir a lista de deseos
+          </button>
+        </div>
+        <div *ngIf="this.isInLista > 0">
+          <button type="button" class="btn btn-vg" title="Quitar de la lista de deseos" (click)="deleteListaDeseos(user.id_user,producto.id_producto)">
+            <i class="fas fa-heart"></i>  Quitar de la lista de deseos
+          </button>
+        </div>
+      </div>
+    </div>
+    <!-- VALORACIONES -->
+    <app-valoracion *ngIf="producto.id_producto" [id_prod]=producto.id_producto></app-valoracion>
+  </div>
+</div>

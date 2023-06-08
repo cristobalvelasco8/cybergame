@@ -1,0 +1,126 @@
+/* Importación de fuentes Rubik Regular 400 y Poppins Extra-Light 200 / Light 300 */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300&family=Rubik&display=swap');
+
+h1,h2,h3,h4,h5,h6{
+  font-family: 'Rubik', 'Arial', sans-serif;
+  font-weight: 700;
+}
+
+p,div{
+  font-family: 'Poppins';
+  font-weight: 300;
+}
+
+a, .enlace-titulo{
+  transition: .4s;
+  text-decoration: none;
+  color: #006294;
+}
+
+a:hover, .enlace-titulo:hover{
+  transition: .4s;
+  text-decoration: none;
+  color: #0088CE;
+}
+
+mat-form-field.full-width {
+  width: 100%;
+}
+
+.mat-form-field--inline {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.mat-form-field--inline .mat-form-field {
+  display: inline-block;
+  width: 100%;
+  vertical-align: middle;
+}
+
+.mat-form-field--inline .mat-form-field:nth-child(1) {
+  margin-right: 10px;
+}
+
+.product-cards{
+  float: left;
+}
+
+.product-cards-console{
+  color: #fff;
+  font-weight: bold;
+}
+
+.product-cards-console span{
+  background-color: #006294;
+}
+
+.nav-category{
+  background-color: #0A52A3;
+}
+
+.nav-category a{
+  display: contents;
+  color: #fff;
+}
+
+.nav-category a > div{
+  transition: .4s;
+}
+
+.nav-category a:hover > div{
+  transition: .4s;
+  background-color: #0083C6;
+}
+
+.nav-category div{
+  font-weight: 600;
+}
+
+
+.precio-detalle{
+  color: #006294;
+  font-weight: 800;
+}
+
+.sin-stock span{
+  background-color: #ac0000;
+  color: #fff;
+  font-weight: bold;
+  padding: 0 5px 0 5px;
+}
+
+.name-valoracion{
+  color: #006294;
+}
+
+.importe-total{
+  color: #006294;
+}
+
+.nota-destacada > span{
+  color: #006294;
+  font-weight:500;
+  font-style: italic;
+  background-color:wheat;
+  padding: 7px 15px;
+}
+
+/* Botón basado en las clases de Bootstrap .btn-primary, modificado para que muestre el color corporativo */
+/* Se usa en todos los botones de la aplicación, y en el botón de confirmación en cuadros de diálogo SÍ / NO */
+.btn-vg{color:#fff;background-color:#FFC107  ;border-color:#fff}
+.btn-vg:hover{color:#fff;background-color:#0A52A3;border-color:#0A52A3}
+.btn-check:focus+.btn-vg,.btn-vg:focus{color:#fff;background-color:#0088CE;border-color:#0083C6;box-shadow:0 0 0 .25rem rgba(49,132,253,.5)}
+.btn-check:active+.btn-vg,.btn-check:checked+.btn-vg,.btn-vg.active,.btn-vg:active,.show>.btn-vg.dropdown-toggle{color:#fff;background-color:#0083C6;border-color:#0A7ABE}
+.btn-check:active+.btn-vg:focus,.btn-check:checked+.btn-vg:focus,.btn-vg.active:focus,.btn-vg:active:focus,.show>.btn-vg.dropdown-toggle:focus{box-shadow:0 0 0 .25rem rgba(49,132,253,.5)}
+.btn-vg.disabled,.btn-vg:disabled{color:#fff;background-color:#006294;border-color:#006294}
+
+/* Botón basado en las clases de Bootstrap .btn-primary, modificado para que muestre un color de alerta */
+/*  */
+.btn-vg-alert{color:#fff;background-color:#ac0000;border-color:#fff}
+.btn-vg-alert:hover{color:#fff;background-color:#E70000;border-color:#0083C6}
+.btn-check:focus+.btn-vg-alert,.btn-vg-alert:focus{color:#fff;background-color:#E70000;border-color:#FF2424;box-shadow:0 0 0 .25rem rgba(253, 49, 49, 0.5)}
+.btn-check:active+.btn-vg-alert,.btn-check:checked+.btn-vg-alert,.btn-vg-alert.active,.btn-vg-alert:active,.show>.btn-vg-alert.dropdown-toggle{color:#fff;background-color:#E70000;border-color:#B90202}
+.btn-check:active+.btn-vg-alert:focus,.btn-check:checked+.btn-vg-alert:focus,.btn-vg-alert.active:focus,.btn-vg-alert:active:focus,.show>.btn-vg-alert.dropdown-toggle:focus{box-shadow:0 0 0 .25rem rgba(253, 49, 49, 0.5)}
+.btn-vg-alert.disabled,.btn-vg-alert:disabled{color:#fff;background-color:#FF2424;border-color:#FF2424}
